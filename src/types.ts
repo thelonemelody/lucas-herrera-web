@@ -38,7 +38,6 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   tags: string[];
-  mood?: string;
   content: string;
 }
 
@@ -48,5 +47,4 @@ export interface BlogPostMeta {
   date: string;
   excerpt: string;
   tags: string[];
-  mood?: string;
 }

@@ -217,7 +217,6 @@ title: "Building My First React App"
 date: "2025-01-15"
 excerpt: "Today I learned about component composition..."
 tags: ["react", "learning", "web-dev"]
-mood: "productive"
 ---
 
 ## What I Worked On
@@ -242,7 +241,6 @@ The parser extracts all this data, then custom React components render it:
 - Date shown with an icon
 - Tags as pill-shaped badges
 - Body content with custom styling for headings, lists, code blocks
-- Mood indicator (optional visual element)
 
 ---
 

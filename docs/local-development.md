@@ -4,10 +4,11 @@ This guide explains how to run the website locally for development.
 
 ## Prerequisites
 
-- **Node.js**: Version 20.x or higher
+- **Node.js**: Version 20.19+ or 22.12+ (required by Vite)
 - **npm**: Comes with Node.js
 
 To check your versions:
+
 ```bash
 node --version
 npm --version
@@ -38,12 +39,12 @@ The site will be available at `http://localhost:5173/lucas-herrera-web/`
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with hot reload |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint to check code quality |
+| Command           | Description                              |
+| ----------------- | ---------------------------------------- |
+| `npm run dev`     | Start development server with hot reload |
+| `npm run build`   | Build for production                     |
+| `npm run preview` | Preview production build locally         |
+| `npm run lint`    | Run ESLint to check code quality         |
 
 ## Project Structure
 
@@ -124,7 +125,6 @@ Edit `src/utils/blogPosts.ts` and add a new entry to the `samplePosts` array:
   date: 'January 20, 2025',
   excerpt: 'Brief summary...',
   tags: ['topic1', 'topic2'],
-  mood: 'excited',
   content: `
     <h2>Section Title</h2>
     <p>Content goes here...</p>

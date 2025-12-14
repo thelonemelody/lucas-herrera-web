@@ -9,15 +9,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
   return (
     <article className="max-w-3xl mx-auto">
       <header className="mb-8">
-        <div className="flex items-center gap-2 text-text-secondary text-sm mb-4">
-          <span>{post.date}</span>
-          {post.mood && (
-            <>
-              <span>•</span>
-              <span className="text-purple-accent">{post.mood}</span>
-            </>
-          )}
-        </div>
+        <p className="text-text-secondary text-sm mb-4">{post.date}</p>
         <h1 className="text-4xl font-bold text-text-primary text-glow mb-4">
           {post.title}
         </h1>

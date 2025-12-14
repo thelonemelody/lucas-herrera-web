@@ -11,15 +11,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Link to={`/blog/${post.slug}`}>
       <Card className="h-full">
-        <div className="flex items-center gap-2 text-text-secondary text-sm mb-2">
-          <span>{post.date}</span>
-          {post.mood && (
-            <>
-              <span>•</span>
-              <span>{post.mood}</span>
-            </>
-          )}
-        </div>
+        <span className="text-text-secondary text-sm mb-2 block">{post.date}</span>
         <h3 className="text-xl font-bold text-text-primary mb-2 hover:text-electric-blue transition-colors">
           {post.title}
         </h3>

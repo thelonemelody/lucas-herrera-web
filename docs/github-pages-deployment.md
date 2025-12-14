@@ -77,13 +77,19 @@ The site will automatically rebuild and deploy within a few minutes.
 To use a custom domain:
 
 1. Go to **Settings** → **Pages**
+
 2. Under **Custom domain**, enter your domain name
+
 3. Click **Save**
+
 4. Add a CNAME file to the `public/` folder with your domain:
+   
    ```
    yourdomain.com
    ```
+
 5. Configure your domain's DNS settings:
+   
    - For apex domain: Add A records pointing to GitHub's IPs
    - For subdomain: Add a CNAME record pointing to `yourusername.github.io`
 
@@ -98,6 +104,7 @@ See [GitHub's documentation](https://docs.github.com/en/pages/configuring-a-cust
 3. Check the error logs for details
 
 Common issues:
+
 - **Build errors**: Check for TypeScript/ESLint errors in your code
 - **Missing dependencies**: Ensure `package.json` is up to date
 

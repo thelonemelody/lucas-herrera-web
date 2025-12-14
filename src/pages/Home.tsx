@@ -102,31 +102,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Quick Links */}
-      <section className="py-16 px-4 bg-space-dark/50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-text-primary text-glow mb-8">
-            Explore More
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/work-history">
-              <Button variant="secondary" size="lg">
-                Work History
-              </Button>
-            </Link>
-            <Link to="/skills">
-              <Button variant="secondary" size="lg">
-                Skills
-              </Button>
-            </Link>
-            <Link to="/portfolio">
-              <Button variant="secondary" size="lg">
-                Portfolio
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
