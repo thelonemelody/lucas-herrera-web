@@ -19,7 +19,7 @@ npm --version
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/lucas-herrera-web.git
+git clone https://github.com/lucasjherrera/lucas-herrera-web.git
 cd lucas-herrera-web
 ```
 

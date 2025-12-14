@@ -50,11 +50,11 @@ To add a new post:
 2. Add a new post with frontmatter at the top
 3. Commit and push - the site auto-deploys
 
-See [docs/implementation_plan.md](docs/implementation_plan.md) for the full blog format specification.
+See [docs/implementation-plan.md](docs/implementation-plan.md) for the full blog format specification.
 
 ## Documentation
 
-- [Implementation Plan](docs/implementation_plan.md) - Detailed architecture and implementation guide
+- [Implementation Plan](docs/implementation-plan.md) - Detailed architecture and implementation guide
 - [Local Development](docs/local-development.md) - Development setup instructions
 - [GitHub Pages Deployment](docs/github-pages-deployment.md) - Deployment configuration
 

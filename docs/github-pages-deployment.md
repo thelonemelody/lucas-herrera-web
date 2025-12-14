@@ -11,7 +11,7 @@ The repository is configured with GitHub Actions to automatically deploy to GitH
 1. Push changes to the `main` branch
 2. GitHub Actions workflow triggers automatically
 3. The site is built and deployed to GitHub Pages
-4. Your site is live at `https://yourusername.github.io/lucas-herrera-web/`
+4. Your site is live at `https://lucasjherrera.github.io/lucas-herrera-web/`
 
 ## Initial Setup (One-Time)
 
@@ -46,10 +46,10 @@ git push origin main
 After deployment, your site will be available at:
 
 ```
-https://yourusername.github.io/lucas-herrera-web/
+https://lucasjherrera.github.io/lucas-herrera-web/
 ```
 
-Replace `yourusername` with your GitHub username.
+Replace `lucasjherrera` with your GitHub username.
 
 ## Manual Deployment
 
@@ -91,7 +91,7 @@ To use a custom domain:
 5. Configure your domain's DNS settings:
    
    - For apex domain: Add A records pointing to GitHub's IPs
-   - For subdomain: Add a CNAME record pointing to `yourusername.github.io`
+   - For subdomain: Add a CNAME record pointing to `lucasjherrera.github.io`
 
 See [GitHub's documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) for detailed instructions.
 

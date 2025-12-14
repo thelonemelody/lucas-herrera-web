@@ -91,8 +91,7 @@ lucas-herrera-web/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Actions deployment
 ├── docs/
-│   ├── high_level_design.md
-│   ├── implementation_plan.md
+│   ├── implementation-plan.md
 │   ├── local-development.md
 │   └── github-pages-deployment.md
 ├── public/
