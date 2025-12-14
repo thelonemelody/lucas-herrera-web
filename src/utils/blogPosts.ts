@@ -138,3 +138,36 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 export function getRecentPosts(count: number = 3): BlogPostMeta[] {
   return getAllPosts().slice(0, count);
 }
+
+// Extract date components from slug (format: YYYY-MM-DD-title)
+export function getDateFromSlug(slug: string): { year: number; month: number; day: number } | null {
+  const match = slug.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!match) return null;
+  return {
+    year: parseInt(match[1], 10),
+    month: parseInt(match[2], 10),
+    day: parseInt(match[3], 10),
+  };
+}
+
+// Group posts by month (returns Map with key format "YYYY-MM")
+export function getPostsByMonth(): Map<string, BlogPostMeta[]> {
+  const posts = getAllPosts();
+  const byMonth = new Map<string, BlogPostMeta[]>();
+
+  for (const post of posts) {
+    const dateInfo = getDateFromSlug(post.slug);
+    if (!dateInfo) continue;
+
+    const monthKey = `${dateInfo.year}-${String(dateInfo.month).padStart(2, '0')}`;
+
+    if (!byMonth.has(monthKey)) {
+      byMonth.set(monthKey, []);
+    }
+    byMonth.get(monthKey)!.push(post);
+  }
+
+  // Sort map keys in reverse chronological order
+  const sortedEntries = [...byMonth.entries()].sort((a, b) => b[0].localeCompare(a[0]));
+  return new Map(sortedEntries);
+}

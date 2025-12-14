@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { SectionTitle } from '../components/common/SectionTitle';
 import { BlogPostList } from '../components/blog/BlogPostList';
+import { BlogCalendarView } from '../components/blog/BlogCalendarView';
+import { BlogViewToggle, type BlogViewMode } from '../components/blog/BlogViewToggle';
 import { getAllPosts } from '../utils/blogPosts';
 
 export function Blog() {
+  const [viewMode, setViewMode] = useState<BlogViewMode>('list');
   const posts = getAllPosts();
 
   return (
@@ -11,7 +15,12 @@ export function Blog() {
         <SectionTitle subtitle="Daily reflections and learnings">
           Blog
         </SectionTitle>
-        <BlogPostList posts={posts} />
+        <BlogViewToggle view={viewMode} onChange={setViewMode} />
+        {viewMode === 'list' ? (
+          <BlogPostList posts={posts} />
+        ) : (
+          <BlogCalendarView />
+        )}
       </div>
     </div>
   );
