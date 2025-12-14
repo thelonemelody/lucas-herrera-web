@@ -44,7 +44,7 @@ Static data files in `src/data/`:
 - `skills.ts` - Skill categories
 - `currentlyLearning.ts` - Learning items
 
-Blog posts currently stored as static data in `src/utils/blogPosts.ts`. Types defined in `src/types.ts`.
+Blog posts stored as monthly markdown files in `src/content/blog/` (e.g., `2025-01.md`). Each file contains multiple posts separated by `---`. Parsed by `src/utils/blogPosts.ts` using gray-matter. Types defined in `src/types.ts`.
 
 ### Styling
 

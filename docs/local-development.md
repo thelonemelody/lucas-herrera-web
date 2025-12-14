@@ -116,21 +116,49 @@ Edit `src/data/skills.ts`:
 
 ### Adding a Blog Post
 
-Edit `src/utils/blogPosts.ts` and add a new entry to the `samplePosts` array:
+Blog posts are organized into monthly markdown files in `src/content/blog/`. To add a new post:
 
-```typescript
-{
-  slug: '2025-01-20-my-post',
-  title: 'My New Post',
-  date: 'January 20, 2025',
-  excerpt: 'Brief summary...',
-  tags: ['topic1', 'topic2'],
-  content: `
-    <h2>Section Title</h2>
-    <p>Content goes here...</p>
-  `,
-}
+1. Open the monthly file (e.g., `2025-01.md` for January 2025)
+   - Create the file if it doesn't exist for the current month
+2. Add your new post at the top of the file (newest first)
+
+**Monthly file format** (`src/content/blog/YYYY-MM.md`):
+
+```markdown
+---
+date: 2025-01-20
+title: My New Post
+excerpt: Brief summary of the post...
+tags: topic1, topic2, topic3
+---
+
+## Section Title
+
+Content goes here in markdown format.
+
+## Another Section
+
+- Bullet points work
+- As do other markdown features
+
+---
+
+---
+date: 2025-01-19
+title: Previous Post
+excerpt: Another summary...
+tags: tag1, tag2
+---
+
+Content for the previous post...
 ```
+
+**Format rules:**
+- Each post starts with frontmatter (between `---` markers)
+- Required fields: `date`, `title`, `excerpt`, `tags`
+- Tags are comma-separated
+- Posts are separated by a blank line, then `---`, then a blank line
+- The slug is auto-generated from the date and title
 
 ## Updating Your Resume
 

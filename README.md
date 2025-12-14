@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Lucas Herrera - Personal Portfolio & Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website showcasing skills, accomplishments, and a daily blog of work and reflections.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This website serves as a professional portfolio and daily blog platform. It features a dark space blue theme with a futuristic aesthetic - modern, tech-forward design with glowing accents, smooth animations, and clean typography.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite 7
+- **Styling**: Tailwind CSS 4
+- **Routing**: React Router v7
+- **Hosting**: GitHub Pages with automatic deployment
 
-## Expanding the ESLint configuration
+## Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install      # Install dependencies
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/     # Reusable UI components
+│   ├── layout/     # Header, Footer, Navigation
+│   ├── common/     # Button, Card, Badge, etc.
+│   ├── portfolio/  # Project cards and grid
+│   ├── work-history/  # Timeline components
+│   ├── skills/     # Skill badges and categories
+│   └── blog/       # Blog post components
+├── pages/          # Route pages
+├── data/           # Static data (projects, skills, etc.)
+├── content/blog/   # Markdown blog posts
+├── utils/          # Utilities (blog parser, etc.)
+└── types.ts        # TypeScript types
+```
+
+## Blog Workflow
+
+Blog posts are stored as monthly markdown files in `src/content/blog/` (e.g., `2025-01.md`).
+
+To add a new post:
+1. Open or create the monthly file (e.g., `2025-03.md`)
+2. Add a new post with frontmatter at the top
+3. Commit and push - the site auto-deploys
+
+See [docs/implementation_plan.md](docs/implementation_plan.md) for the full blog format specification.
+
+## Documentation
+
+- [Implementation Plan](docs/implementation_plan.md) - Detailed architecture and implementation guide
+- [Local Development](docs/local-development.md) - Development setup instructions
+- [GitHub Pages Deployment](docs/github-pages-deployment.md) - Deployment configuration
+
+## Live Site
+
+Visit the live site at: https://lucasjherrera.github.io/lucas-herrera-web/
