@@ -64,3 +64,37 @@ body {
 .timeline-line {
   background: linear-gradient(180deg, var(--color-electric-blue) 0%, var(--color-cyan-glow) 100%);
 }
+
+/* Blog post content styling */
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content p {
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.blog-content ul {
+  color: var(--color-text-secondary);
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
