@@ -167,7 +167,7 @@ export function CircuitBackground() {
         </g>
 
         {/* Animated electricity dots - multiple per path */}
-        {circuitPaths.map((path, index) => {
+        {circuitPaths.map((_path, index) => {
           const duration = 25 + (index % 4) * 10;
           // Use shuffled appearance order for random spawn locations
           // Stagger by .9s between paths, and spread dots within each path
