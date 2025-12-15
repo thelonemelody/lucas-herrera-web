@@ -98,3 +98,54 @@ body {
 .blog-content li {
   margin-bottom: 0.5rem;
 }
+
+/* Circuit background animation */
+.circuit-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.circuit-trace {
+  fill: none;
+  stroke: rgba(59, 130, 246, 0.15);
+  stroke-width: 2;
+}
+
+.circuit-nodes circle {
+  fill: rgba(59, 130, 246, 0.2);
+}
+
+.electricity-dot {
+  fill: #fbbf24;
+  filter: drop-shadow(0 0 6px #fbbf24) drop-shadow(0 0 12px #fbbf24);
+}
+
+/* Vary the brightness of different dots */
+.electricity-dot-0 {
+  fill: #fcd34d;
+  filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 16px #f59e0b);
+}
+
+.electricity-dot-1 {
+  fill: #fbbf24;
+  filter: drop-shadow(0 0 6px #fbbf24) drop-shadow(0 0 10px #f59e0b);
+}
+
+.electricity-dot-2 {
+  fill: #f59e0b;
+  filter: drop-shadow(0 0 5px #fbbf24) drop-shadow(0 0 8px #f59e0b);
+}
+
+.electricity-dot-3 {
+  fill: #fcd34d;
+  filter: drop-shadow(0 0 7px #fbbf24) drop-shadow(0 0 14px #f59e0b);
+}
+
+.electricity-dot-4 {
+  fill: #fbbf24;
+  filter: drop-shadow(0 0 6px #fbbf24) drop-shadow(0 0 12px #f59e0b);
+}
