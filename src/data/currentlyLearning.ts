@@ -2,15 +2,23 @@ import type { LearningItem } from '../types';
 
 export const currentlyLearning: LearningItem[] = [
   {
-    name: 'Rust',
-    description: 'Systems programming for performance-critical applications',
+    name: 'MS Computer Science - Georgia Tech',
+    description: 'Specialization in Computational Perception and Robotics (GPA: 3.83)',
   },
   {
-    name: 'Kubernetes',
-    description: 'Container orchestration for scalable deployments',
+    name: 'Artificial Intelligence',
+    description: 'AI fundamentals, AI for Robotics, and Game AI',
   },
   {
-    name: 'Machine Learning',
-    description: 'Exploring ML fundamentals and practical applications',
+    name: 'Computer Vision',
+    description: 'Image processing and visual perception systems',
+  },
+  {
+    name: 'Human Computer Interaction',
+    description: 'Designing intuitive and effective user interfaces',
+  },
+  {
+    name: 'Cyber-physical Design',
+    description: 'Integration of computational and physical systems',
   },
 ];
