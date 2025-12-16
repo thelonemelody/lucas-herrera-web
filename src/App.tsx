@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout';
 import { Home, Portfolio, WorkHistory, Skills, Blog, BlogPost } from './pages';
 
 function App() {
   return (
-    <BrowserRouter basename="/lucas-herrera-web">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -15,7 +15,7 @@ function App() {
           <Route path="blog/:slug" element={<BlogPost />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
