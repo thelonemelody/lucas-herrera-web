@@ -39,13 +39,14 @@ function parseNewFormat(section: string): { data: Record<string, string>; conten
 
   let contentStartIndex = 1;
 
-  // Parse metadata lines (starting with * )
+  // Parse metadata lines (starting with * or - )
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i];
-    if (line.startsWith('* ')) {
+    const metaMatch = line.match(/^[*-]\s+/);
+    if (metaMatch) {
       const colonIndex = line.indexOf(':');
       if (colonIndex > 2) {
-        const key = line.slice(2, colonIndex).trim();
+        const key = line.slice(metaMatch[0].length, colonIndex).trim();
         const value = line.slice(colonIndex + 1).trim();
         data[key] = value;
       }
