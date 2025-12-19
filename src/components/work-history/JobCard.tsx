@@ -11,7 +11,7 @@ export function JobCard({ job }: JobCardProps) {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
         <div>
           <h3 className="text-xl font-bold text-text-primary">{job.title}</h3>
-          <p className="text-electric-blue font-medium">{job.company}</p>
+          <p className="text-amber-glow font-medium">{job.company}</p>
         </div>
         <span className="text-text-secondary text-sm whitespace-nowrap">
           {job.startDate} - {job.endDate}

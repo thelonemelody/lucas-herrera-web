@@ -6,7 +6,7 @@ import { BlogViewToggle, type BlogViewMode } from '../components/blog/BlogViewTo
 import { getAllPosts } from '../utils/blogPosts';
 
 export function Blog() {
-  const [viewMode, setViewMode] = useState<BlogViewMode>('list');
+  const [viewMode, setViewMode] = useState<BlogViewMode>('calendar');
   const posts = getAllPosts();
 
   return (

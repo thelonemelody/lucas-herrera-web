@@ -67,7 +67,7 @@ export function CalendarMonth({ monthKey, posts }: CalendarMonthProps) {
   return (
     <div className="mb-8">
       {/* Month header */}
-      <h3 className="text-2xl font-bold text-text-primary mb-4 text-glow">
+      <h3 className="text-2xl font-bold text-text-primary mb-4">
         {MONTH_NAMES[month - 1]} {year}
       </h3>
 

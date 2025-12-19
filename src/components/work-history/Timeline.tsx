@@ -20,7 +20,7 @@ export function Timeline({ jobs }: TimelineProps) {
             }`}
           >
             {/* Timeline dot */}
-            <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-electric-blue rounded-full transform -translate-x-1/2 mt-8 glow-blue" />
+            <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-amber-glow rounded-full transform -translate-x-1/2 mt-8 glow-amber" />
 
             {/* Content */}
             <div className="ml-10 md:ml-0 md:w-1/2 md:px-8">

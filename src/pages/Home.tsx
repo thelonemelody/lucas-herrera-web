@@ -14,14 +14,14 @@ export function Home() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-6 text-glow">
+          <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-6 glitch-hover">
             Lucas Herrera
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-2xl mx-auto">
             Software Engineer passionate about building innovative solutions and sharing knowledge through daily reflections.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button as="a" href="/resume.pdf" download variant="primary" size="lg">
+            <Button as="a" href={`${import.meta.env.BASE_URL}resume.pdf`} download variant="primary" size="lg">
               Download Resume
             </Button>
             <Button as="a" href="#projects" variant="outline" size="lg">
@@ -35,12 +35,12 @@ export function Home() {
       <section id="projects" className="py-16 px-4 bg-space-dark/50">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-text-primary text-glow">
+            <h2 className="text-3xl font-bold text-text-primary glitch-hover">
               Featured Projects
             </h2>
             <Link
               to="/portfolio"
-              className="text-electric-blue hover:underline"
+              className="nav-link text-amber-glow"
             >
               View all →
             </Link>
@@ -69,10 +69,10 @@ export function Home() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-text-primary text-glow">
+            <h2 className="text-3xl font-bold text-text-primary glitch-hover">
               Recent Posts
             </h2>
-            <Link to="/blog" className="text-electric-blue hover:underline">
+            <Link to="/blog" className="nav-link text-amber-glow">
               View all →
             </Link>
           </div>
@@ -84,10 +84,19 @@ export function Home() {
                     <span className="text-text-secondary text-sm">
                       {post.date}
                     </span>
-                    <h3 className="text-xl font-bold text-text-primary mt-2 mb-2 hover:text-electric-blue transition-colors">
+                    <h3 className="text-xl font-bold text-text-primary mt-2 mb-2 hover:text-amber-glow transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-text-secondary">{post.excerpt}</p>
+                    <p className="text-text-secondary mb-4">{post.excerpt}</p>
+                    {post.tags && post.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {post.tags.map((tag) => (
+                          <Badge key={tag} variant="amber">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
                   </Card>
                 </Link>
               ))}

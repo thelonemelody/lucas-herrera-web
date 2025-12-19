@@ -31,11 +31,11 @@ export function Button({
 
   const variants = {
     primary:
-      'bg-electric-blue text-white hover:bg-electric-blue/80 glow-blue',
+      'bg-amber-glow text-space-black hover:bg-amber-bright glow-amber btn-glow',
     secondary:
-      'bg-space-blue text-text-primary hover:bg-space-blue/80',
+      'bg-space-blue text-text-primary hover:bg-space-blue/80 btn-glow',
     outline:
-      'border border-electric-blue text-electric-blue hover:bg-electric-blue/10',
+      'border border-amber-glow text-amber-glow hover:bg-amber-glow/10 btn-glow',
   };
 
   const sizes = {

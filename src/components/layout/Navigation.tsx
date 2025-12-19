@@ -3,21 +3,21 @@ import { NavLink } from 'react-router-dom';
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/portfolio', label: 'Portfolio' },
-  { to: '/work-history', label: 'Work History' },
+  { to: '/work-history', label: 'Work' },
   { to: '/skills', label: 'Skills' },
   { to: '/blog', label: 'Blog' },
 ];
 
 export function Navigation() {
   return (
-    <nav className="flex gap-6">
+    <nav className="flex justify-center gap-3 sm:gap-6 flex-wrap">
       {navLinks.map((link) => (
         <NavLink
           key={link.to}
           to={link.to}
           className={({ isActive }) =>
-            `text-sm font-medium transition-colors hover:text-electric-blue ${
-              isActive ? 'text-electric-blue text-glow' : 'text-text-secondary'
+            `nav-link text-xs sm:text-sm font-medium transition-all duration-300 ${
+              isActive ? 'text-amber-glow text-glow active' : 'text-text-secondary'
             }`
           }
         >
