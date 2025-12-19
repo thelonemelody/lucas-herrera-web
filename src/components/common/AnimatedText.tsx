@@ -18,6 +18,8 @@ export function AnimatedText({ children, className = '' }: AnimatedTextProps) {
     originalText.split('').map(char => ({ char, isScrambling: false }))
   );
   const timeoutsRef = useRef<Map<number, ReturnType<typeof setTimeout>>>(new Map());
+  const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const lastTriggeredRef = useRef<number>(-1);
 
   const scrambleLetter = useCallback((index: number) => {
     const originalChar = originalText[index];
@@ -62,11 +64,32 @@ export function AnimatedText({ children, className = '' }: AnimatedTextProps) {
     scramble();
   }, [originalText]);
 
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    // Find which letter index this element corresponds to
+    const index = letterRefs.current.findIndex(ref => ref === element);
+    if (index !== -1 && index !== lastTriggeredRef.current) {
+      lastTriggeredRef.current = index;
+      scrambleLetter(index);
+    }
+  }, [scrambleLetter]);
+
+  const handleTouchEnd = useCallback(() => {
+    lastTriggeredRef.current = -1;
+  }, []);
+
   return (
-    <span className={`inline-block cursor-default ${className}`}>
+    <span
+      className={`inline-block cursor-default ${className}`}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {letters.map((letter, index) => (
         <span
           key={index}
+          ref={el => { letterRefs.current[index] = el; }}
           className={`inline-block transition-all duration-75 ${
             letter.isScrambling
               ? 'text-amber-glow scale-110'
@@ -78,6 +101,7 @@ export function AnimatedText({ children, className = '' }: AnimatedTextProps) {
               : 'none',
           }}
           onMouseEnter={() => scrambleLetter(index)}
+          onTouchStart={() => scrambleLetter(index)}
         >
           {letter.char === ' ' ? '\u00A0' : letter.char}
         </span>
