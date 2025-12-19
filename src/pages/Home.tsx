@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
+import { AnimatedText } from '../components/common/AnimatedText';
 import { projects } from '../data/projects';
 import { getRecentPosts } from '../utils/blogPosts';
 
@@ -14,8 +15,8 @@ export function Home() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-6 glitch-hover">
-            Lucas Herrera
+          <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-6">
+            <AnimatedText>Lucas Herrera</AnimatedText>
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-2xl mx-auto">
             Software Engineer passionate about building innovative solutions and sharing knowledge through daily reflections.
@@ -23,9 +24,6 @@ export function Home() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button as="a" href={`${import.meta.env.BASE_URL}resume.pdf`} download variant="primary" size="lg">
               Download Resume
-            </Button>
-            <Button as="a" href="#projects" variant="outline" size="lg">
-              View Projects
             </Button>
           </div>
         </div>
@@ -35,8 +33,8 @@ export function Home() {
       <section id="projects" className="py-16 px-4 bg-space-dark/50">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-text-primary glitch-hover">
-              Featured Projects
+            <h2 className="text-3xl font-bold text-text-primary">
+              <AnimatedText>Featured Projects</AnimatedText>
             </h2>
             <Link
               to="/portfolio"
@@ -69,8 +67,8 @@ export function Home() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-text-primary glitch-hover">
-              Recent Posts
+            <h2 className="text-3xl font-bold text-text-primary">
+              <AnimatedText>Recent Posts</AnimatedText>
             </h2>
             <Link to="/blog" className="nav-link text-amber-glow">
               View all →
