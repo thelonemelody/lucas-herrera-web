@@ -17,7 +17,7 @@ export function AnimatedText({ children, className = '' }: AnimatedTextProps) {
   const [letters, setLetters] = useState<LetterState[]>(
     originalText.split('').map(char => ({ char, isScrambling: false }))
   );
-  const timeoutsRef = useRef<Map<number, NodeJS.Timeout>>(new Map());
+  const timeoutsRef = useRef<Map<number, ReturnType<typeof setTimeout>>>(new Map());
 
   const scrambleLetter = useCallback((index: number) => {
     const originalChar = originalText[index];
