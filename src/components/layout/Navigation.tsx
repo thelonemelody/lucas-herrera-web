@@ -16,7 +16,7 @@ export function Navigation() {
           key={link.to}
           to={link.to}
           className={({ isActive }) =>
-            `nav-link text-xs sm:text-sm font-medium transition-all duration-300 ${
+            `nav-link text-sm sm:text-lg font-medium transition-all duration-300 ${
               isActive ? 'text-amber-glow text-glow active' : 'text-text-secondary'
             }`
           }
