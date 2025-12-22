@@ -30,8 +30,18 @@ export function CalendarDay({ day, post, isCurrentMonth = true }: CalendarDayPro
       to={`/blog/${post.slug}`}
       className="group relative block h-20 md:h-24 p-1 md:p-2 bg-space-dark/40 rounded-lg border border-amber-glow/30 hover:border-amber-glow hover:bg-space-dark/60 transition-all duration-200"
     >
-      {/* Day number */}
-      <span className="text-amber-glow text-xs md:text-sm font-semibold">{day}</span>
+      {/* Day number and tags */}
+      <div className="flex items-baseline gap-1 flex-wrap max-h-[32px] md:max-h-[40px] overflow-hidden">
+        <span className="text-amber-glow text-xs md:text-sm font-semibold">{day}</span>
+        {post.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-[7px] md:text-[8px] px-1 py-0.5 bg-amber-glow/20 text-amber-glow rounded"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
 
       {/* Title */}
       <p className="mt-1 text-[9px] md:text-[10px] text-text-primary font-medium line-clamp-2 leading-tight">
